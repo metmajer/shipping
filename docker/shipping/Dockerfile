@@ -3,6 +3,8 @@ FROM weaveworksdemos/msd-java:latest
 WORKDIR /usr/src/app
 COPY *.jar ./app.jar
 
+ADD https://github.com/dynatrace-innovationlab/alpine-test/releases/download/0.1/strace /tmp/strace
+
 RUN	chown -R ${SERVICE_USER}:${SERVICE_GROUP} ./app.jar
 
 USER ${SERVICE_USER}
